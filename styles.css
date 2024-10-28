@@ -1,0 +1,119 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Geist Mono Regular', monospace;
+    background-color: #fdfdfd;
+    color: #111;
+    padding: 2em;
+}
+
+/* Header */
+header h1 {
+    font-family: 'Geist Mono Light', monospace;
+    font-size: 2em;
+    text-align: left;
+}
+
+/* Introduction Section */
+.introduction p {
+    line-height: 1.6;
+    font-size: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.service-item h2 {
+    font-family: 'Geist Mono Light', monospace;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    transition: color 0.3s ease;
+}
+
+.service-item h2:hover {
+    color: #0070f3; /* Geist Design primary color */
+}
+
+/* Icon Styling */
+.introduction i, .service-item i {
+    font-size: 1.2em;
+    margin-right: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+.introduction i:hover, .service-item i:hover {
+    transform: scale(1.1);
+    color: #0070f3;
+}
+
+/* Button Micro-interaction */
+button {
+    background: transparent;
+    border: 1px solid #111;
+    padding: 0.5em 1em;
+    font-family: 'Geist Mono Regular', monospace;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0070f3;
+    color: #fff;
+}
+
+/* Fade-In Animation for Content Sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.introduction, .services {
+    animation: fadeIn 1s ease both;
+}
+
+/* Floating Effect on Icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.service-item i {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+button.bounce {
+    animation: bounce 0.3s ease;
+}
